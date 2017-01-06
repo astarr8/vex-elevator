@@ -155,12 +155,23 @@ task main()
 	//Access button states using buttons[i].state
 	//0: Not set, 1: Set
 
+
+	//Main Loop:
+	//Check for any floor requests
+
+
+	button *b;
+	led *ld;
+	//int pendingRequests[10];
 	while(true)
 	{
 		for(int i = 0; i < NUMBER_OF_FLOORS; i++)
 		{
-			button b = buttons[i];
-			led ld = leds[i];
+			b = &buttons[i];
+			ld = &leds[i];
+
+			if(b -> state)
+				ld -> state = 2;
 
 		}
 
